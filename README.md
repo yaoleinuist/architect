@@ -7,7 +7,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/yaoleinuist/architect.svg?style=flat&label=Fork)](https://github.com/yaoleinuist/architect/fork)
 [![GitHub watchers](https://img.shields.io/github/watchers/yaoleinuist/architect.svg?style=flat&label=Watch)](https://github.com/yaoleinuist/architect/watchers)
 
-**更新于20180624**
 
 
 * [数据结构](https://github.com/yaoleinuist/architect/blob/master/README.md#数据结构)
