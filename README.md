@@ -1899,6 +1899,14 @@ Java、Spring、Dubbo 优雅关闭方式。
 
 #### Zab
 * [《Zab：Zookeeper 中的分布式一致性协议介绍》](https://www.jianshu.com/p/fb527a64deee)
+####详解
+* [《ZAB协议选主过程详解》](https://zhuanlan.zhihu.com/p/27335748)
+####发送顺序问题
+* [《发送顺序问题》](https://my.oschina.net/pingpangkuangmo/blog/778927)
+####算法实现
+* [《FastLeaderElection算法源码解析》](https://blog.csdn.net/zhanyuanlin/article/details/50662921)
+* [《FastLeaderElection算法--图》](http://www.jasongj.com/zookeeper/fastleaderelection/)
+
 
 #### Raft
 * [《Raft 为什么是更易理解的分布式一致性算法》](http://www.cnblogs.com/mindwind/p/5231986.html)
