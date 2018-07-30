@@ -1894,6 +1894,7 @@ Java、Spring、Dubbo 优雅关闭方式。
 ### 分布式一致性算法
 
 #### PAXOS
+* [《《Paxos Made Simple》翻译》](https://www.cnblogs.com/YaoDD/p/6150498.html)
 * [《分布式系列文章——Paxos算法原理与推导》](https://www.cnblogs.com/linbingdong/p/6253479.html)
 * [《Paxos-->Fast Paxos-->Zookeeper分析》](https://blog.csdn.net/u010039929/article/details/70171672)
 * [《【分布式】Zookeeper与Paxos》](https://www.cnblogs.com/leesf456/p/6012777.html)
