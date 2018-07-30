@@ -1906,7 +1906,8 @@ Java、Spring、Dubbo 优雅关闭方式。
 * [《发送顺序问题》](https://my.oschina.net/pingpangkuangmo/blog/778927)
 ####算法实现
 * [《FastLeaderElection looking-状态》](http://www.jasongj.com/zookeeper/fastleaderelection/)
-* [《FastLeaderElection算法源码解析》](https://blog.csdn.net/zhanyuanlin/article/details/50662921)
+* [《FastLeaderElection looking-状态 1》](https://my.oschina.net/pingpangkuangmo/blog/778927)
+* [《FastLeaderElection-2与1互补》](https://blog.csdn.net/zhanyuanlin/article/details/50662921)
 * [《FastLeaderElection算法--图》](http://www.jasongj.com/zookeeper/fastleaderelection/)
 * [《leader选举》](http://iwinit.iteye.com/blog/1773531/)
 
