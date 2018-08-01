@@ -1913,6 +1913,7 @@ Java、Spring、Dubbo 优雅关闭方式。
 * [《FastLeaderElection-2与1互补》](https://blog.csdn.net/zhanyuanlin/article/details/50662921)
 * [《FastLeaderElection算法--图》](http://www.jasongj.com/zookeeper/fastleaderelection/)
 * [《leader选举》](http://iwinit.iteye.com/blog/1773531/)
+* [《zookeeper请求处理》](https://blog.csdn.net/u011277123/article/details/53637037)
 * [《zookeeper缺点》](http://cloud.51cto.com/art/201504/474415.htm)
 
 
