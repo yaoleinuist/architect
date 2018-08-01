@@ -1915,6 +1915,8 @@ Java、Spring、Dubbo 优雅关闭方式。
 * [《leader选举》](http://iwinit.iteye.com/blog/1773531/)
 * [《zookeeper请求处理》](https://blog.csdn.net/u011277123/article/details/53637037)
 * [《zookeeper缺点》](http://cloud.51cto.com/art/201504/474415.htm)
+* [《zookeeper watch机制》](https://blog.csdn.net/fayeyiwang/article/details/54743201)
+
 
 
 #### Raft
