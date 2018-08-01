@@ -1916,6 +1916,7 @@ Java、Spring、Dubbo 优雅关闭方式。
 * [《zookeeper请求处理》](https://blog.csdn.net/u011277123/article/details/53637037)
 * [《zookeeper缺点》](http://cloud.51cto.com/art/201504/474415.htm)
 * [《zookeeper watch机制》](https://blog.csdn.net/fayeyiwang/article/details/54743201)
+* [《zookeeper 内存树》](http://blog.sina.com.cn/s/blog_7b9948fd0102w8yv.html)
 * [《客户端选择哪个节点》](https://blog.csdn.net/mawming/article/details/51848764)
 
 
