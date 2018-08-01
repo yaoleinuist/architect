@@ -1892,7 +1892,8 @@ Java、Spring、Dubbo 优雅关闭方式。
 	* 利用 memcached 的 add（有别于set）操作，当key存在时，返回false。
 
 ### 分布式一致性算法
-
+#### zookeeper源码分析
+* [《《zookeeper源码分析》》](https://www.cnblogs.com/siodoon/articles/5438076.html)
 #### PAXOS
 * [《《Paxos Made Simple》》](https://github.com/yaoleinuist/architect/blob/master/paxos-simple.pdf)
 * [《《Paxos Made Simple》翻译》](https://www.cnblogs.com/YaoDD/p/6150498.html)
