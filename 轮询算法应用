@@ -1,0 +1,81 @@
+
+转至元数据结尾
+创建： 姚磊，最新修改： 十一月 23, 2018 10:21 转至元数据起始
+1.由于短息系统对接的上游越来越多，上游的供应商发送率，支持的短信类型，费用，到达率等参差不齐，因此需要提供给运营人员一个后台管理页面，供他们配置路由信息。
+
+ ①、本想利用红黑树的算法存储路由信息，但渠道信息不是很多，红黑树需进行左旋，右旋，反转等操作；
+
+        而单链表不需要，小于8个，查询成本较高，新增成本低，如果接下来渠道大于8个，可以直接使用红黑树的数据结构不用map，查询成本低，新增成本高一些，需要维护红黑树的稳定和平衡性，但插入的可能性和频率很低。
+
+ ②、路由配置算法：轮询权重。
+
+  举例：
+
+          有三个节点{WW, ZA, CR}，他们的权重分别是{WW=5, ZA=1, CR=1}。发送7次请求，WW会被分配5次，ZA会被分配1次，CR会被分配1次，其中节点信息配置在数据库。
+
+           1.方案一：选取权重最大的渠道进行发送，然后将权重-1，依次进行发送，但这样会导致前五次全是WW，导致轮询的不是很平滑，甚至导致渠道压力很大。
+
+           2.方案二：
+
+                         1、概念解释，每个节点有三个权重变量，分别是：
+
+                             (1) weight: 约定权重，即在配置文件或初始化时约定好的每个节点的权重。
+
+                             (2) effectiveWeight: 有效权重，初始化为weight。
+
+                                如果发现当前渠道不可用或异常，则-1；
+
+                                之后再次选取本渠道，调用成功一次则+1，直达恢复到weight；
+
+                                此变量的作用主要是节点异常，降低其权重。
+
+                            (3) currentWeight: 节点当前权重，初始化为0。
+
+                      2、算法逻辑
+
+                          (1) 轮询所有节点，计算当前状态下所有节点的effectiveWeight之和totalWeight；
+
+                          (2) currentWeight = currentWeight + effectiveWeight;  选出所有节点中currentWeight中最大的一个节点作为选中节点；
+
+                          (3) 选中节点的currentWeight = currentWeight - totalWeight；
+
+                        基于以上算法逻辑，
+
+                        这时有三个节点{WW, ZA, ZR}，权重分别是{WW=4, ZA=2, CR=1}，共7次请求，初始currentWeight值为{0, 0, 0}，每次分配后的结果如下： 
+
+请求序号	请求前currentWeight值	选中节点	请求后currentWeight值
+1	{CR=1,ZA=2,WW=4}	WW	{CR=1,ZA=2,WW=-3}
+2	{CR=2,ZA=4,WW=1}	ZA	{CR=2,ZA=-3,WW=1}
+3	{CR=3,ZA=-1,WW=5}	WW	{CR=3,ZA=-1,WW=-2}
+4	{CR=4,ZA=1,WW=2}	CR	{CR=-3,ZA=1,WW=2}
+5	{CR=-2,ZA=3,WW=6}	WW	{CR=-2,ZA=3,WW=-1}
+6	{CR=-1,ZA=5,WW=3}	ZA	{CR=-1,ZA=-2,WW=3}
+7	{CR=0,ZA=0,WW=7}	WW	{CR=0,ZA=0,WW=0}
+观察到七次调用选中的渠道顺序为{WW, ZA, WW, CR, WW, ZA, WW}，WW选中4次，ZA选中2次，CR选中1次，算法保持了currentWeight值从初始值{CR=0,ZA=0,WW=0}到7次调用后又回到{CR=0,ZA=0,WW=0}。
+
+
+public  List<SmsChannelInfoNew> getBestChannel(List<SmsChannelInfoNew> channelList) {
+
+        synchronized(channelList) {
+            SmsChannelInfoNew channel = null;
+            SmsChannelInfoNew best = null;
+            int total = 0;
+            for (int i = 0, len = channelList.size(); i < len; i++) {
+
+                channel = channelList.get(i);
+                channel.setCurrentWeight(channel.getCurrentWeight() + channel.getEffectiveWeight());
+                total += channel.getEffectiveWeight();
+
+                if (channel.getEffectiveWeight() < channel.getWeight()) {
+                    channel.setEffectiveWeight(channel.getEffectiveWeight() + 1);
+                }
+                if (best == null || channel.getCurrentWeight() > best.getCurrentWeight()) {
+                    best = channel;
+                }
+            }
+            Collections.sort(channelList);
+            best.setCurrentWeight(best.getCurrentWeight() - total);
+            logger.info("#getBestChannel--channelCode={}", best.getChannelCode());
+            return channelList;
+        }
+    }
