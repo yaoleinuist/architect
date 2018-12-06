@@ -993,7 +993,6 @@ APM —  Application Performance Management
 ### OpenResty
 * [官方网站](http://openresty.org/cn/)
 * [Nginx 教程](http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html)
-* [浅谈OpenResty](http://www.linkedkeeper.com/detail/blog.action?bid=1034)
 * [《浅谈 OpenResty》](http://www.linkedkeeper.com/detail/blog.action?bid=1034)
 	* 通过 Lua 模块可以在Nginx上进行开发。 
 
