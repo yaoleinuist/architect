@@ -1658,6 +1658,8 @@ TODO
 ## 日志框架
 
 ### Log4j、Log4j2
+*  
+* [《log日志死循环问题解释》](https://blog.csdn.net/kxcfzyk/article/details/38613861)
 * [《log4j 详细讲解》](https://blog.csdn.net/u012422446/article/details/51199724)
 * [《log4j2 实际使用详解》](https://blog.csdn.net/vbirdbest/article/details/71751835)
 * [《Log4j1,Logback以及Log4j2性能测试对比》](https://my.oschina.net/OutOfMemory/blog/789267)
