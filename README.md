@@ -997,6 +997,8 @@ APM —  Application Performance Management
 	* 通过 Lua 模块可以在Nginx上进行开发。 
 * [openresty开发文档](https://www.nginx.com/resources/wiki/modules/lua/)
 * [openresty最佳实践](https://moonbingbing.gitbooks.io/openresty-best-practices/content/)
+* [openresty最佳实践](https://github.com/iresty)
+
 
 
 
