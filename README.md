@@ -553,6 +553,10 @@ KMP：Knuth-Morris-Pratt算法（简称KMP）
 
 * [《Dijkstra算法详解》](https://blog.csdn.net/qq_35644234/article/details/60870719)
 
+## work-stealling算法
+
+* [《work-stealling》](https://blog.csdn.net/Holmofy/article/details/82714665)
+
 # 并发
 
 ## Java 并发
