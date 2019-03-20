@@ -702,6 +702,9 @@ KMP：Knuth-Morris-Pratt算法（简称KMP）
 * [java多线程系列：死锁及检测](https://blog.csdn.net/bohu83/article/details/51135061)
 	* jstack 可以显示死锁。
 	
+* [cpu过高检查](https://blog.csdn.net/puhaiyang/article/details/78663942)
+
+	
 # 操作系统
 
 ## 计算机原理
